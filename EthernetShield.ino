@@ -48,7 +48,18 @@ void loop() {
           client.println("<p> Ola mundo !! </p>");
           client.println("</HTML>");
         }
+          if (c == 'n') {
+          // you're starting a new line
+          currentLineIsBlank = true;
+        } 
+        else if (c != 'r') {
+          // you've gotten a character on the current line
+          currentLineIsBlank = false;
+        }
        }
     }
+     delay(1);
+    // Fechando conexão:
+    client.stop();
   }
 } 
